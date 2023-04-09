@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  postgresdb:
+    image: postgres:13
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=email_sender
+      - POSTGRES_DB=email-service
+    ports:
+      - 5433:5432
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  app:
+    depends_on:
+      - postgresdb
+    build: ./app
+    restart: on-failure
+    ports:
+      - 6868:8080
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url"  : "jdbc:postgresql://postgresdb:5432/email-service",
+        "spring.datasource.username" : "postgres",
+        "spring.datasource.password" : "email_sender",
+        "spring.jpa.hibernate.ddl-auto" : "update"
+      }'
+    volumes:
+      - .m2:/root/.
+    stdin_open: true
+    tty: true
+
+volumes:
+  db:
