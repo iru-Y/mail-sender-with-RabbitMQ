@@ -21,9 +21,9 @@ services:
       - 6868:8080
     environment:
       SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:postgresql://postgresdb:5432/email-service",
+        "spring.datasource.url"  : "jdbc:postgresql://postgres:ydfg9FOXjOp8mqNutvtE@containers-us-west-151.railway.app:7886/railway",
         "spring.datasource.username" : "postgres",
-        "spring.datasource.password" : "email_sender",
+        "spring.datasource.password" : "ydfg9FOXjOp8mqNutvtE",
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'
     volumes:
