@@ -5,10 +5,10 @@ services:
     image: postgres:13
     restart: unless-stopped
     environment:
-      - POSTGRES_PASSWORD=email_sender
-      - POSTGRES_DB=email-service
+      - POSTGRES_PASSWORD=CpDTSTm0Lb0KJEDHevq3
+      - POSTGRES_DB=railway
     ports:
-      - 5433:5432
+      - 5433:7782
     volumes:
       - db:/var/lib/postgresql/data
 
