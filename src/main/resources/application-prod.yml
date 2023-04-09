@@ -8,20 +8,3 @@ spring:
   sql:
     init:
       mode: always
-
-  spring:
-    mail:
-      host: smtp.gmail.com
-      port: 587
-      username: branquinhapretahotmail.com@gmail.com
-      password: lzkuuynusnlamenq
-      properties:
-        mail:
-          smtp:
-            auth: true
-            starttls:
-              enable: true
-    rabbitmq:
-      addresses: amqps://wjpobnhn:u649jLUXQ8kKHtXVUeXAIlQmHbu15CcS@sparrow.rmq.cloudamqp.com/wjpobnhn
-      queue: u649jLUXQ8kKHtXVUeXAIlQmHbu15CcS
-
